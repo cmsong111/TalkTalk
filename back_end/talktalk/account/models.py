@@ -39,7 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     objects = UserManager()
 
-    Uidx = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
 
     email = models.EmailField(max_length = 200, unique=True)
     username = models.CharField(max_length=100)
@@ -56,6 +56,12 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.name
+
+    def has_perm(self, perm, obj=None):
+        return True
+
+    def has_module_perms(self, app_label):
+        return True
 
     @property
     def is_staff(self):
