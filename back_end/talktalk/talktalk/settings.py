@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #MY APP
-    'account',
+    'accounts',
 
     #DRF
     'rest_framework',
@@ -50,9 +50,13 @@ INSTALLED_APPS = [
     
     #rest_auth
     'rest_auth',
-    'rest_auth.registration',
     'rest_framework_simplejwt',
 
+    # 'django.contrib.sites',
+    # 'allauth',
+    # 'allauth.account',
+    #'rest_auth.registration',
+    'rest_registration',
 
 
 ]
@@ -144,7 +148,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'account.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -162,3 +166,13 @@ REST_FRAMEWORK = {
 }
 
 
+
+REST_REGISTRATION = {
+    'REGISTER_VERIFICATION_URL': 'https://frontend-host/verify-user/',
+    'RESET_PASSWORD_VERIFICATION_URL': 'https://frontend-host/reset-password/',
+    'REGISTER_EMAIL_VERIFICATION_URL': 'https://frontend-host/verify-email/',
+
+    'VERIFICATION_FROM_EMAIL': 'no-reply@example.com',
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

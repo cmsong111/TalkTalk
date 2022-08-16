@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2aa5b4023d03738366859023844f44f4ce071d02096d61a11f03b9ea827162b7"
+            "sha256": "eda4ddee4713258a01c7f07a3ba781e0cee764f76f2ea0d77f353e17c6340871"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -175,12 +175,28 @@
             "index": "pypi",
             "version": "==1.0.5"
         },
+        "django-rename-app": {
+            "hashes": [
+                "sha256:195d2fa09eec8ed57577f7bf57a3c6944bdb6447fe47c07be0e575fb2e325742",
+                "sha256:bba31d33de4614124e2cd2f22fcea07b2affbbb2cf877a26893e0c15465fbfab"
+            ],
+            "index": "pypi",
+            "version": "==0.1.3"
+        },
         "django-rest-auth": {
             "hashes": [
                 "sha256:f11e12175dafeed772f50d740d22caeab27e99a3caca24ec65e66a8d6de16571"
             ],
             "index": "pypi",
             "version": "==0.9.5"
+        },
+        "django-rest-registration": {
+            "hashes": [
+                "sha256:79a7caca716b12a3bb616ac94321b778ff7027d481bed12752edc5ccfeba34e3",
+                "sha256:83996992658fe1f6ceb1fcd12ebad3a4deb11c6a8b993c5901c573b6c6f70aa4"
+            ],
+            "index": "pypi",
+            "version": "==0.7.2"
         },
         "djangorestframework": {
             "hashes": [
