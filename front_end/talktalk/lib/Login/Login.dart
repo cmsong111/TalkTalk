@@ -78,7 +78,7 @@ Future<Token> _login(String userEmail, String userPassword) async {
   print(userPassword);
 
   final response = await http.post(
-      Uri.parse('${dotenv.get('MainURL')}account/login/'),
+      Uri.parse('${dotenv.get('MainURL')}accounts/login/'),
       headers: {"Content-Type": "application/json"},
       body: json.encode({"email": userEmail, "password": userPassword}));
 
