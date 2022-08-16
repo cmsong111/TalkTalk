@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from talktalk import settings
+from django.urls import re_path
+
+api_urlpatterns = [
+    path('accounts/', include('rest_registration.api.urls')),
+]
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #url(r'^rest-auth/', include('rest_auth.urls'))
-    #path('user/', include('account.urls')),
-    path('account/', include('account.urls')),
-    #url(r'^rest-auth/', include('rest_auth.urls')),
-
+    path('accounts/', include('accounts.urls')),
     #path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    #re_path('rest-auth/registration/', include('rest_auth.registration.urls'))
+    path('api/v1/', include(api_urlpatterns)),
 ]

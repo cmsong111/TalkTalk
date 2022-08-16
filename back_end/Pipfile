@@ -16,6 +16,8 @@ djangorestframework-jwt = "*"
 djangorestframework-oauth = "*"
 django-jsonfield-backport = "==1.0.5"
 djangorestframework-simplejwt = "*"
+django-rename-app = "*"
+django-rest-registration = "*"
 
 [dev-packages]
 

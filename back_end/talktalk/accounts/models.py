@@ -4,7 +4,7 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, Permis
 class UserManager(BaseUserManager):    
    use_in_migrations = True  
 
-   def create_user(self, email, password, username, nickname):        
+   def create_user(self, email, password, username, nickname,**extra_fields):        
        
        if not email:            
            raise ValueError('must have user email')
@@ -21,7 +21,7 @@ class UserManager(BaseUserManager):
        user.save(using=self._db)        
        return user
 
-   def create_superuser(self, email, password, username, nickname):        
+   def create_superuser(self, email, password, username, nickname,**extra_fields):        
    
        user = self.create_user(            
             email = self.normalize_email(email),
@@ -55,7 +55,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['nickname','username']
 
     def __str__(self):
-        return self.name
+        return self.username
 
     def has_perm(self, perm, obj=None):
         return True
