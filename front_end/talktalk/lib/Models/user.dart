@@ -66,3 +66,41 @@ class Token {
     return data;
   }
 }
+
+class Join {
+  int? id;
+  String? email;
+  String? username;
+  String? nickname;
+  String? createdAt;
+  String? updatedAt;
+
+  Join({
+    this.id,
+    this.email,
+    this.username,
+    this.nickname,
+    this.createdAt,
+    this.updatedAt,
+  });
+
+  Join.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    email = json['email'];
+    username = json['username'];
+    nickname = json['nickname'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['email'] = this.email;
+    data['username'] = this.username;
+    data['nickname'] = this.nickname;
+    data['created_at'] = this.createdAt;
+    data['updated_at'] = this.updatedAt;
+    return data;
+  }
+}
